@@ -1,10 +1,8 @@
-#Express project JWT
-
-```
-npm install
-
+#  Express project JWT
+```  
+npm install 
 ```
 
-*express
-*nodemon
-*jwt
+* express
+* nodemon
+* jwt
