@@ -28,24 +28,26 @@ const login = async(req,res)=>{
 }
 const dashboard = async (req,res)=>{
     console.log(req.headers)
-    const authHeader = req.headers.authorization;
-    if(!authHeader ){
-        throw new CustomAPIError("No token",401)
-    }
-    const token = authHeader.split(" ")[1]
-    try {
-        const decoded = jwt.verify(token,process.env.JWT_SECRET)
-        // I set this line after decoded 
-        const luckyNumber = Math.floor(Math.random()*1000)
-        res.status(200).json({msg:`Hello , john Doe `,
-    secret:`${luckyNumber}`})
-        console.log(decoded)
-    } catch (error) {
-        throw new CustomAPIError("Not authorized to access this route",401)
-    }
-    console.log(token)
+    // set here first after that moved to middleware
+    // const authHeader = req.headers.authorization;
+    // if(!authHeader ){
+    //     throw new CustomAPIError("No token",401)
+    // }
+    // const token = authHeader.split(" ")[1]
+    // try {
+    //     const decoded = jwt.verify(token,process.env.JWT_SECRET)
+    //     // I set this line after decoded 
+    //     const luckyNumber = Math.floor(Math.random()*1000)
+    //     res.status(200).json({msg:`Hello , ${decoded.username} `,
+    // secret:`${luckyNumber}`})
+    //     console.log(decoded)
+    // } catch (error) {
+    //     throw new CustomAPIError("Not authorized to access this route",401)
+    // }
+    // console.log(token)
+    console.log(req.user)
     const luckyNumber = Math.floor(Math.random()*1000)
-        res.status(200).json({msg:`Hello , john Doe `,
+        res.status(200).json({msg:`Hello ,${req.user.username} `,
     secret:`${luckyNumber}`})
         
     } 
