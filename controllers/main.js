@@ -45,12 +45,12 @@ const dashboard = async (req,res)=>{
     //     throw new CustomAPIError("Not authorized to access this route",401)
     // }
     // console.log(token)
-    console.log(req.user)
-    const luckyNumber = Math.floor(Math.random()*1000)
-        res.status(200).json({msg:`Hello ,${req.user.username} `,
-    secret:`${luckyNumber}`})
+    // console.log(req.user)
+    // const luckyNumber = Math.floor(Math.random()*1000)
+    //     res.status(200).json({msg:`Hello ,${req.user.username} `,
+    // secret:`${luckyNumber}`})
         
-    } 
+    // } 
    
 
 

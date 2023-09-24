@@ -19,3 +19,8 @@ const authenticationMiddleWare = async(req,res,next)=>{
 }
 
 module.exports = authenticationMiddleWare
+
+// mongodb transation
+// mongodb indexing
+// mongodb refrencing 
+// mongodb embeded doc.
